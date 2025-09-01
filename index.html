@@ -13,27 +13,33 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
     a{color:var(--blue);text-decoration:none}
-    img{max-width:100%;height:auto}
+    img{max-width:100%;height:auto;display:block}
     .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+    /* Header */
     header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;min-width:0}
-    .logo{width:36px;height:36px;flex:0 0 36px}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;box-shadow:var(--shadow);text-align:center}
-    .btn:hover{background:#152b67}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid var(--line);text-align:center}
-    /* New: high-contrast orange button */
-    .btn-orange{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow);text-align:center}
-    .btn-orange:hover{filter:brightness(.95)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{width:48px;height:auto}
+    .brand-title{font-weight:800;letter-spacing:-.2px;font-size:18px;line-height:1}
+    .brand-tag{color:var(--muted);font-size:12px;margin-top:2px}
 
-    /* Header CTA row – mobile-first full-width stack */
-    .cta-row{display:flex;flex-direction:column;gap:8px;width:100%;max-width:340px;margin-left:auto}
+    /* Header CTAs: stack on mobile, row on larger screens */
+    .cta-row{display:flex;flex-direction:column;gap:8px;width:100%;max-width:360px;margin-left:auto}
     .cta-row a{width:100%;justify-content:center}
     @media(min-width:720px){
       .cta-row{flex-direction:row;gap:10px;width:auto;max-width:none}
       .cta-row a{width:auto}
     }
 
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow);text-align:center}
+    .btn:hover{background:#152b67}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid var(--line);text-align:center}
+    .btn-orange{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:var(--shadow);text-align:center}
+    .btn-orange:hover{filter:brightness(.95)}
+
+    /* Hero */
     .hero{padding:56px 0;border-bottom:1px solid var(--line);
       background:
         radial-gradient(600px 200px at 10% -20%, rgba(30,58,138,.06), transparent 70%),
@@ -43,36 +49,27 @@
     @media(min-width:860px){.cols-2{grid-template-columns:1fr 1fr}}
     h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 8px}
     .muted{color:var(--muted)}
-    .badges {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  max-width:520px;
-  margin:18px 0;
-  justify-content:center;
-}
-.badge {
-  flex:1 1 150px;   /* each badge can shrink or grow */
-  min-width:140px;  /* prevents text overlap */
-  text-align:center;
-} 0}
-    .badge{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+
+    /* Badges (fixed overlap with flex wrap) */
+    .badges{display:flex;flex-wrap:wrap;gap:12px;max-width:620px;margin:18px 0;justify-content:center}
+    .badge{border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center;flex:1 1 160px;min-width:150px;background:#fff}
     .badge strong{display:block;font-size:18px}
+
     section{padding:48px 0}
     h2{font-size:clamp(22px,3.6vw,30px);margin:0 0 10px}
     .three{display:grid;gap:14px}
     @media(min-width:820px){.three{grid-template-columns:repeat(3,1fr)}}
     .card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff}
     .panel{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;box-shadow:var(--shadow)}
-    .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #fed7aa;color:#b45309;font-weight:600}
+    .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #fed7aa;color:#b45309;font-weight:700}
+
     input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit}
     button[type=submit]{cursor:pointer}
-    .footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px}
-    .social{display:flex;gap:14px}
-    .social a{color:var(--blue);font-weight:600;text-decoration:none}
     .note{font-size:12px;color:var(--muted)}
     .success{color:var(--green)}
     .error{color:#b91c1c}
+
+    /* Story & Challenge sections */
     .story{background:#fffdf6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .story .panel{background:#fff8f1}
     .challenge{background:#f7fff9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -81,26 +78,30 @@
     .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
     .step strong{display:block;margin-bottom:4px}
     .kicker{display:inline-block;padding:4px 10px;border-radius:999px;background:#ecfdf5;color:#065f46;border:1px solid #bbf7d0;font-weight:700;font-size:12px;letter-spacing:.3px}
+
+    /* Desktop enhancements */
+    @media(min-width:900px){
+      .logo{width:64px}
+      .brand-title{font-size:22px}
+      .brand-tag{font-size:14px}
+    }
+
+    /* Footer */
+    .footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px}
+    .social{display:flex;gap:14px;flex-wrap:wrap}
+    .social a{color:var(--blue);font-weight:600}
   </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#">
-      <!-- Logo -->
-      <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Excellyte logo">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#16A34A"/></linearGradient></defs>
-        <path d="M32 6C32 6 14 24 14 36c0 9.9 8.1 18 18 18s18-8.1 18-18C50 24 32 6 32 6z" fill="url(#g1)"/>
-        <circle cx="42" cy="20" r="5" fill="#F59E0B"/>
-        <path d="M20 40a10 10 0 0 0 14 10A10 10 0 0 0 20 40z" fill="#FDBA74"/>
-      </svg>
+      <img src="logo.png" alt="Excellyte logo" class="logo">
       <div>
-        <div style="font-weight:800;letter-spacing:-.2px">Excellyte</div>
-        <div class="muted" style="font-size:12px;margin-top:-2px">Hydration with Gratitude</div>
+        <div class="brand-title">Excellyte</div>
+        <div class="brand-tag">Hydration with Gratitude</div>
       </div>
     </a>
-
-    <!-- Updated CTA buttons -->
     <div class="cta-row">
       <a class="btn-orange" href="#challenge">Gratitude Challenge</a>
       <a class="btn" href="#signup">Get Early Access</a>
@@ -115,11 +116,13 @@
       <div>
         <h1>Double the Electrolytes. <span style="color:var(--orange)">Zero Added Sugar.</span></h1>
         <p class="muted">Born from resilience and gratitude. Designed for real heat, real work, and real life.</p>
+
         <div class="badges">
           <div class="badge"><strong style="color:var(--orange)">2×</strong><span class="muted">Electrolytes</span></div>
           <div class="badge"><strong style="color:var(--green)">0</strong><span class="muted">Added Sugar</span></div>
           <div class="badge"><strong style="color:var(--blue)">Clean</strong><span class="muted">Ingredients</span></div>
         </div>
+
         <a class="btn" href="#signup">Notify Me</a>
       </div>
       <div class="panel">
@@ -251,9 +254,9 @@
 
   const CANDIDATE_URLS = [
     'https://www.excellyte.com/thanks.html', // usually valid SSL first
-    'https://excellyte.com/thanks.html',     // use when apex SSL is ready
+    'https://excellyte.com/thanks.html',     // once apex SSL is ready
     buildSameOriginThanks(),                 // covers GitHub Pages project paths
-    // Optional: exact GitHub Pages fallback for guaranteed SSL:
+    // Optional: guaranteed-SSL fallback during provisioning:
     // 'https://YOUR-USERNAME.github.io/YOUR-REPO/thanks.html'
   ].filter(Boolean);
 
