@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gratitude Challenge – Claim Reward | Excellyte</title>
+  <meta name="description" content="Claim your Excellyte Gratitude Challenge reward. Submit your handle and dates for verification.">
+
+  <!-- Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Global dark theme stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-local typography rhythm (optional; move to styles.css later) -->
+  <style>
+    .content p{margin:0 0 14px; line-height:1.65}
+    .content h1{margin:0 0 14px; line-height:1.2}
+    .content h2{margin:0 10px 12px 0; line-height:1.25}
+    .content ul{margin:0 0 14px 20px}
+    .content li{margin:6px 0}
+  </style>
+</head>
+<body>
+
+  <!-- Header (rounded floating card; uses styles.css) -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <!-- Logo -->
+        <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Excellyte logo">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#16A34A"/></linearGradient></defs>
+          <path d="M32 6C32 6 14 24 14 36c0 9.9 8.1 18 18 18s18-8.1 18-18C50 24 32 6 32 6z" fill="url(#g1)"/>
+          <circle cx="42" cy="20" r="5" fill="#F59E0B"/>
+          <path d="M20 40a10 10 0 0 0 14 10A10 10 0 0 0 20 40z" fill="#FDBA74"/>
+        </svg>
+        <div>
+          <div class="brand-title">Excellyte</div>
+          <div class="brand-tag">Hydration with Gratitude</div>
+        </div>
+      </a>
+
+      <div class="cta-row">
+        <a class="btn btn-blue" href="index.html#signup">Get Early Access</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section>
+      <div class="wrap">
+        <!-- Intro Panel -->
+        <div class="panel" style="margin-bottom:16px">
+          <span class="kicker">Gratitude Challenge</span>
+          <h1>Claim Your Free 30-Serving Pouch</h1>
+          <p class="muted max-820">
+            Finished your 30-day streak? Awesome. Submit your details below so we can verify your posts and get your reward shipped.
+          </p>
+        </div>
+
+        <!-- CLAIM FORM -->
+        <div class="panel">
+          <h2 style="margin-bottom:8px">Submission Details</h2>
+
+          <form id="claim-form" action="https://formspree.io/f/xeolkblb" method="POST" novalidate>
+            <!-- Contact -->
+            <div class="row">
+              <div>
+                <label for="email">Email (for confirmation)</label>
+                <input id="email" name="email" type="email" class="input" placeholder="you@example.com" required />
+              </div>
+              <div>
+                <label for="platform">Platform</label>
+                <select id="platform" name="platform" class="input" required>
+                  <option value="" disabled selected>Select platform</option>
+                  <option>TikTok</option>
+                  <option>Instagram</option>
+                  <option>YouTube</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="handle">@Handle</label>
+                <input id="handle" name="handle" type="text" class="input" placeholder="@excellyte_hydration" required />
+                <div class="help">Use your exact public handle so we can find your posts.</div>
+              </div>
+              <div>
+                <label for="profileUrl">Profile URL</label>
+                <input id="profileUrl" name="profile_url" type="url" class="input" placeholder="https://tiktok.com/@yourname" required />
+              </div>
+            </div>
+
+            <!-- Dates -->
+            <div class="row">
+              <div>
+                <label for="start">Streak Start Date</label>
+                <input id="start" name="streak_start" type="date" class="input" required />
+              </div>
+              <div>
+                <label for="end">Streak End Date</label>
+                <input id="end" name="streak_end" type="date" class="input" required />
+              </div>
+            </div>
+
+            <!-- Proof link -->
+            <div>
+              <label for="playlist">Proof Link (playlist, hashtag page, or sample post)</label>
+              <input id="playlist" name="proof_link" type="url" class="input" placeholder="https://www.tiktok.com/tag/ExcellyteGratitude" />
+              <div class="help">One link is enough (playlist, hashtag page, or a couple of representative posts).</div>
+            </div>
+
+            <!-- Confirmations -->
+            <div class="panel" style="background:linear-gradient(180deg, rgba(17,24,39,.6), rgba(17,24,39,.85)); border:1px dashed rgba(148,163,184,.35);">
+              <label style="display:flex;gap:10px;align-items:flex-start">
+                <input type="checkbox" name="confirm_30" required />
+                <span>I posted <strong>30 daily videos</strong> in a row, sharing 3 things I’m grateful for each day.</span>
+              </label>
+              <label style="display:flex;gap:10px;align-items:flex-start;margin-top:8px">
+                <input type="checkbox" name="confirm_tags" required />
+                <span>My posts used <strong>#ExcellyteGratitude</strong> and tagged <strong>@excellyte_hydration</strong> or I can provide proof if private.</span>
+              </label>
+              <label style="display:flex;gap:10px;align-items:flex-start;margin-top:8px">
+                <input type="checkbox" name="shipping_ok" required />
+                <span>I understand Excellyte will contact me for a shipping address to send my 30-serving pouch.</span>
+              </label>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" class="input" placeholder="Anything else we should know? (e.g., private account, missed day and restarted, etc.)"></textarea>
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="website" autocomplete="off" style="position:absolute;left:-5000px;opacity:0" tabindex="-1" aria-hidden="true" />
+
+            <!-- Tracking -->
+            <input type="hidden" name="_subject" value="Excellyte Gratitude Challenge Claim" />
+            <input type="hidden" name="signup_source" value="Claim Page" />
+            <input type="hidden" name="tag" value="Gratitude Challenge Claim" />
+
+            <button id="submitBtn" type="submit" class="btn btn-blue">Submit Claim</button>
+            <p id="formStatus" class="note" style="margin-top:6px;"></p>
+
+            <noscript>
+              <p class="note">JavaScript is off, so you’ll see a Formspree confirmation after submit.</p>
+            </noscript>
+          </form>
+
+          <p class="note" style="margin-top:12px">
+            We’ll review within a few business days. If we need anything else, we’ll email you at the address above.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap" style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>© <span id="y"></span> Excellyte. All rights reserved.</div>
+      <div class="social">
+        <a href="https://tiktok.com/@excellyte_hydration" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://instagram.com/excellyte_hydration" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@excellyte_hydration" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Basic client-side checks: end >= start
+    const startEl = document.getElementById('start');
+    const endEl = document.getElementById('end');
+    function validDates(){
+      if(!startEl.value || !endEl.value) return true;
+      return new Date(endEl.value) >= new Date(startEl.value);
+    }
+
+    // AJAX submit + smart redirect (Formspree friendly)
+    const form = document.getElementById('claim-form');
+    const statusEl = document.getElementById('formStatus');
+    const btn = document.getElementById('submitBtn');
+
+    // Prefer www during SSL provisioning; fall back to same-origin
+    function sameOriginThanks(){
+      try{
+        const { origin, pathname } = window.location;
+        if (pathname.endsWith('/')) return origin + pathname + 'thanks.html?claim=1';
+        return origin + pathname.replace(/[^/]*$/, 'thanks.html?claim=1');
+      }catch(_){ return null; }
+    }
+    const CANDIDATE_URLS = [
+      'https://www.excellyte.com/thanks.html?claim=1',
+      'https://excellyte.com/thanks.html?claim=1',
+      sameOriginThanks(),
+      // 'https://YOUR-USERNAME.github.io/YOUR-REPO/thanks.html?claim=1' // optional GH Pages fallback
+    ].filter(Boolean);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if(!validDates()){
+        statusEl.innerHTML = '<span class="error">End date must be on or after start date.</span>';
+        return;
+      }
+
+      statusEl.textContent = 'Submitting…';
+      btn.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (resp.ok) {
+          statusEl.innerHTML = '<span class="success">✅ Claim received! Redirecting…</span>';
+          for (const url of CANDIDATE_URLS) {
+            try {
+              await fetch(url, { method: 'HEAD', mode: 'no-cors' });
+              window.location.href = url;
+              return;
+            } catch (_) {}
+          }
+          statusEl.innerHTML += ' <span class="note">(If you are not redirected, <a href="thanks.html?claim=1">tap here</a>.)</span>';
+        } else {
+          statusEl.innerHTML = '<span class="error">Hmm, something went wrong. Please try again.</span>';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        statusEl.innerHTML = '<span class="error">Network error. Please check your connection and try again.</span>';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
