@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Excellyte — Hydrate With Purpose</title>
+  <meta name="description" content="Excellyte hydration—born from adversity, built on gratitude. Join the early adopters and get 10% off." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Excellyte — Hydrate With Purpose">
+  <meta property="og:description" content="Born from adversity. Built on gratitude. Clean ingredients, real performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-local typography rhythm (optional: move into styles.css later) -->
+  <style>
+    .content p{margin:0 0 14px; line-height:1.65}
+    .content h1{margin:0 0 14px; line-height:1.2}
+    .content h2{margin:0 10px 12px 0; line-height:1.25}
+    .content ul{margin:0 0 14px 20px}
+    .content li{margin:6px 0}
+  </style>
+</head>
+<body>
+
+  <!-- Header (rounded floating card) -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="logo.png" alt="Excellyte logo" class="logo">
+        <span class="brand-title">
+          <h1>Excellyte</h1>
+          <small>Hydrate With Purpose</small>
+        </span>
+      </a>
+
+      <nav class="cta-row" aria-label="Primary">
+        <a class="btn" href="#signup">Early Access</a>
+        <a class="btn orange" href="gratitude.html">Gratitude Challenge</a>
+        <a class="btn secondary" href="#story">Founder’s Story</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Born from adversity. Built on gratitude.</p>
+        <h1 class="title">Hydration that keeps you moving.</h1>
+        <p class="subtitle max-820">
+          Clean ingredients. Zero gimmicks. Real performance. Join early adopters and unlock
+          <strong>10% off</strong>—delivered to your inbox.
+        </p>
+
+        <ul class="list">
+          <li><span class="dot"></span><span>Founder’s journey → resilience in every sip.</span></li>
+          <li><span class="dot"></span><span>Balanced electrolytes, clean taste, no added sugar.</span></li>
+          <li><span class="dot"></span><span>Gratitude Challenge community for daily momentum.</span></li>
+        </ul>
+
+        <!-- Signup Form -->
+        <section id="signup" class="card" aria-label="Early access signup">
+          <form id="xl-form" action="https://hooks.zapier.com/hooks/catch/24434105/uhwzbh9/" method="POST">
+            <input type="hidden" name="source" value="index_hero_signup">
+
+            <div class="honeypot">
+              <label for="hp-company">Leave this empty</label>
+              <input id="hp-company" class="input" type="text" name="company" autocomplete="off">
+            </div>
+
+            <label for="name">Name (optional)</label>
+            <input id="name" class="input" type="text" name="name" placeholder="Your name">
+
+            <label for="email">Email *</label>
+            <input id="email" class="input" type="email" name="email" placeholder="you@example.com" required>
+
+            <button class="submit" type="submit">Join — Get 10% Off</button>
+            <p class="note">Your early-adopter code will arrive via email after submitting.</p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- Product / Lifestyle aside -->
+    <section>
+      <div class="wrap">
+        <div class="card" style="text-align:center">
+          <img src="mockup.png" alt="Excellyte product mockup" class="mock">
+          <div class="mt-16">
+            <h3 class="h3-tight">The Gratitude Edge</h3>
+            <p class="subtitle" style="margin:0">
+              Small daily wins compound into big change. Join the Gratitude Challenge to build momentum with us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder’s Story -->
+    <section id="story" class="card story story-card">
+      <div class="wrap">
+        <div class="story-grid">
+          <div>
+            <h2>Founder’s Story: From Setback to Strength</h2>
+            <p class="pull">Excellyte was built by someone who refused to quit. After a life-altering setback and the loss of a limb, our founder rebuilt—one grateful step at a time.</p>
+            <p>Recovery demanded discipline, hydration, and mindset. Gratitude became the daily practice. Walking miles on a prosthetic, showing up for work, and choosing better habits—this is the rhythm that shaped Excellyte.</p>
+            <p class="quote">“I learned that the body follows the mind, and the mind follows gratitude. Hydration is where momentum starts.”</p>
+            <p>Excellyte exists to help you move forward—clean ingredients, no shortcuts, and a community that celebrates resilience. Whether you’re training, recovering, or simply building better days, we’re with you.</p>
+          </div>
+          <div>
+            <h3>What We Stand For</h3>
+            <ul class="list">
+              <li><span class="dot"></span><span><strong>Authenticity:</strong> Real story, real science, no fluff.</span></li>
+              <li><span class="dot"></span><span><strong>Resilience:</strong> Keep going—small wins add up.</span></li>
+              <li><span class="dot"></span><span><strong>Gratitude:</strong> Our daily edge. It changes how we show up.</span></li>
+              <li><span class="dot"></span><span><strong>Clean Fuel:</strong> Balanced electrolytes. No added sugar. Great taste.</span></li>
+            </ul>
+            <a class="btn orange" href="gratitude.html">Join the Gratitude Challenge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap" style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>© <span id="year"></span> Excellyte. All rights reserved.</div>
+      <div class="social">
+        <a href="https://tiktok.com/@excellyte_hydration" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://instagram.com/excellyte_hydration" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@excellyte_hydration" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // AJAX submit: silently POST to Zapier, then redirect to thanks.html
+    document.getElementById('xl-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new URLSearchParams(new FormData(form)).toString();
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data
+        });
+        window.location.href = "thanks.html";
+      } catch (err) {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
