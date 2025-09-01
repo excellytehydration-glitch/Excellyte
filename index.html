@@ -43,7 +43,19 @@
     @media(min-width:860px){.cols-2{grid-template-columns:1fr 1fr}}
     h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 8px}
     .muted{color:var(--muted)}
-    .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:520px;margin:18px 0}
+    .badges {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  max-width:520px;
+  margin:18px 0;
+  justify-content:center;
+}
+.badge {
+  flex:1 1 150px;   /* each badge can shrink or grow */
+  min-width:140px;  /* prevents text overlap */
+  text-align:center;
+} 0}
     .badge{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
     .badge strong{display:block;font-size:18px}
     section{padding:48px 0}
