@@ -4,14 +4,14 @@
 
 /* Color tokens */
 :root{
-  --bg:#0f172a;           /* page background */
-  --card:#111827;         /* base card surface */
-  --card-contrast:#0b1223;/* deeper card (e.g., Founder) */
+  --bg:#0f172a;             /* page background */
+  --card:#111827;           /* base card surface */
+  --card-contrast:#0b1223;  /* deeper card (e.g., Founder) */
   --text:#e5e7eb;
   --muted:#9ca3af;
   --brand:#22d3ee;
   --brand-2:#34d399;
-  --accent:#f97316;       /* orange button */
+  --accent:#f97316;         /* orange CTA */
   --ok:#10b981;
   --err:#ef4444;
   --line:rgba(148,163,184,.18);
@@ -38,59 +38,93 @@ img{max-width:100%;height:auto;display:block}
 
 /* ==================================
    Header (rounded floating card)
+   Use: <header><div class="wrap nav">...</div></header>
    ================================== */
 header{
   display:grid;
-  grid-template-columns:1fr auto;
+  grid-template-columns: auto 1fr;  /* brand | buttons */
   align-items:center;
-  gap:12px;
+  gap:18px;
 
   max-width:1120px;
-  margin:20px auto;         /* centers header */
+  margin:20px auto;
   padding:16px 20px;
   border-radius:var(--radius);
-  overflow:hidden;          /* enforces rounding on children */
+  overflow:hidden;
   background:linear-gradient(180deg, rgba(17,24,39,.92), rgba(17,24,39,.98));
   border:1px solid var(--line);
   box-shadow:var(--shadow);
 
-  position:sticky;
-  top:0;
-  z-index:10;
+  position:sticky; top:0; z-index:10;
   backdrop-filter:saturate(140%) blur(8px);
 }
 
-/* brand block */
-.brand{display:flex;align-items:center;gap:12px;min-width:0;color:inherit}
-.brand img{width:56px;height:56px;object-fit:contain;border-radius:12px;box-shadow:var(--shadow)}
-.brand-title{display:flex;flex-direction:column;min-width:0}
-.brand-title h1{margin:0;font-size:clamp(22px,3.2vw,30px);line-height:1.05;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand-title small,.brand-tag{color:var(--muted);font-weight:600}
+/* let children of .wrap.nav participate in header grid */
+.nav{display:contents}
 
-/* header CTAs */
-.nav-cta,.cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand .logo{width:56px;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+.brand-title{font-weight:800;letter-spacing:-.2px;font-size:22px}
+.brand-tag{color:var(--muted);font-size:14px;margin-top:2px}
+
+/* ---------- Buttons (fixed colors + sizes) ---------- */
+.cta-row{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+
 .btn{
   appearance:none;border:0;border-radius:999px;cursor:pointer;
-  padding:10px 14px;font-weight:800;letter-spacing:.2px;
+  padding:12px 18px;font-weight:800;letter-spacing:.2px;
   display:inline-flex;align-items:center;justify-content:center;
   min-width:120px;white-space:nowrap;box-shadow:var(--shadow);
-  background:#fff;color:#06131b;
+  background:#fff;color:#06131b;            /* default: white button, dark text */
+  transition:transform .02s ease-in, filter .15s ease;
+  font-size:15px; line-height:1.1;
 }
-.btn.secondary{color:var(--text);background:transparent;outline:1px solid var(--line)}
-.btn.orange{background:var(--accent);color:#0b0f14}
-.btn-blue{background:#1E3A8A;color:#fff}
-.btn-blue:hover{background:#152b67}
+.btn:active{transform:translateY(1px)}
+
+/* Solid color buttons: always white text */
+.btn.orange{background:var(--accent);color:#fff}
+.btn.blue,.btn-blue{background:#1E3A8A;color:#fff}
+.btn.blue:hover,.btn-blue:hover{filter:brightness(.95)}
+
+/* Outline/secondary on dark bg: readable */
+.btn-outline{
+  background:transparent;border:1px solid var(--line);
+  color:#dbeafe;
+}
+.btn-outline:hover{filter:brightness(1.1)}
+
+.btn.secondary{
+  background:transparent;border:1px solid var(--line);
+  color:var(--text);
+}
+
+/* Smaller Gratitude button text without changing HTML */
+.cta-row a.btn.orange{font-size:14px; padding:11px 16px}
+
+/* Optional global size utility if you ever want it:
+.btn--sm{font-size:13.5px;padding:10px 14px}
+*/
+
+/* Mobile: stack with spacing */
 @media (max-width:720px){
   header{grid-template-columns:1fr}
-  .nav-cta,.cta-row{justify-content:stretch}
+  .cta-row{justify-content:stretch;gap:10px}
   .btn{flex:1 1 48%}
 }
 
 /* ==================================
    Sections / Cards / Hero
    ================================== */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch}
-@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.hero{padding:56px 0;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:8px 0 14px}
+.muted{color:var(--muted)}
+.kicker{
+  display:inline-block;padding:4px 10px;border-radius:999px;
+  background:rgba(34,211,238,.12);color:#8be9ff;border:1px solid rgba(34,211,238,.3);
+  font-weight:700;font-size:12px;letter-spacing:.3px
+}
+
+section{padding:48px 0}
 
 .card{
   background:linear-gradient(180deg, rgba(17,24,39,.70), rgba(17,24,39,.88));
@@ -116,6 +150,13 @@ header{
   box-shadow:0 0 0 3px rgba(34,211,238,.12), 0 0 24px rgba(52,211,153,.25);
 }
 
+/* Steps & panels */
+.steps{display:grid;gap:12px}
+@media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:linear-gradient(180deg, rgba(17,24,39,.6), rgba(17,24,39,.8));border:1px solid var(--line);border-radius:12px;padding:16px}
+.step strong{display:block;margin-bottom:4px}
+.panel{border:1px solid var(--line);border-radius:16px;padding:22px;background:linear-gradient(180deg, rgba(17,24,39,.6), rgba(17,24,39,.85));box-shadow:var(--shadow)}
+
 /* ==================================
    Forms
    ================================== */
@@ -136,7 +177,7 @@ label{font-size:14px;color:var(--muted)}
 .note{font-size:12px;color:var(--muted)}
 
 /* ==================================
-   Founder section — high contrast
+   Founder section — higher contrast
    ================================== */
 /* Add 'story-card' to your Founder section: <section class="card story story-card"> */
 .story-card{
@@ -153,33 +194,54 @@ label{font-size:14px;color:var(--muted)}
 .story .quote{border-left:4px solid var(--brand);padding-left:14px;margin:10px 0;color:#dbeafe}
 
 /* ==================================
+   FAQ — clickable cards with chevrons
+   ================================== */
+.faq-kicker{
+  display:inline-block;padding:4px 10px;border-radius:999px;
+  background:rgba(34,211,238,.12);color:#8be9ff;border:1px solid rgba(34,211,238,.3);
+  font-weight:700;font-size:12px;letter-spacing:.3px;margin-bottom:8px;
+}
+details{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(17,24,39,.72);
+  transition:border-color .2s, background .2s;
+  margin:10px 0;
+}
+summary{
+  list-style:none;cursor:pointer;font-weight:800;
+  padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"▾";font-size:18px;line-height:1;transform:rotate(0deg);
+  transition:transform .2s ease;opacity:.9;
+}
+details[open] summary::after{transform:rotate(-180deg)}
+details:hover{background:rgba(17,24,39,.82)}
+summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:8px}
+details>p,details>div{padding:0 16px 14px;color:var(--muted)}
+
+/* ==================================
    Mockup image size (site-wide)
    ================================== */
 .mock{
   width:100%;
-  max-width:320px;    /* consistent, not huge */
+  max-width:320px;
   height:auto;
-  margin:0 auto;      /* center in its card */
+  margin:0 auto;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   object-fit:contain;
   display:block;
 }
-@media (min-width:1100px){
-  .mock{max-width:360px}
-}
+@media (min-width:1100px){ .mock{max-width:360px} }
 
 /* ==================================
    Footer
    ================================== */
-footer{
-  margin-top:36px;
-  padding:18px 0;
-  color:var(--muted);
-  font-size:13px;
-  text-align:center;
-  border-top:1px solid var(--line);
-}
+.footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px}
 
 /* ==================================
    Utilities
