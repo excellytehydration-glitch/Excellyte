@@ -91,3 +91,14 @@ label{font-size:14px;color:var(--muted)}
 
 /* Footer */
 footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:13px;text-align:center}
+
+/* =========================
+   Utility Classes
+   ========================= */
+.mt-16 { margin-top:16px; }
+.mt-14 { margin-top:14px; }
+
+.h3-tight {
+  margin:14px 0 6px;
+  font-weight:800;
+}
