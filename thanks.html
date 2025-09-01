@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You – Excellyte</title>
+  <style>
+    :root{
+      --blue:#1E3A8A; --green:#16A34A; --orange:#F59E0B; --ink:#0f172a; --muted:#475569; --bg:#fefcf7; --line:#e2e8f0;
+      --radius:16px; --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+    body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;display:flex;flex-direction:column;min-height:100vh}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px}
+    .card{max-width:520px;width:100%;padding:32px;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);text-align:center}
+    h1{margin:16px 0 12px;font-size:28px;color:var(--blue)}
+    p{color:var(--muted);margin:0 0 20px}
+    a.btn{display:inline-block;margin-top:10px;padding:12px 18px;background:var(--blue);color:#fff;text-decoration:none;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
+    .social{margin-top:24px;display:flex;gap:14px;justify-content:center}
+    .social a{color:var(--blue);font-weight:600;text-decoration:none}
+    footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+    footer .social{margin-top:10px}
+    .logo{width:64px;height:64px;margin:0 auto}
+  </style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <!-- Logo -->
+    <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Excellyte logo">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#16A34A"/></linearGradient></defs>
+      <path d="M32 6C32 6 14 24 14 36c0 9.9 8.1 18 18 18s18-8.1 18-18C50 24 32 6 32 6z" fill="url(#g1)"/>
+      <circle cx="42" cy="20" r="5" fill="#F59E0B"/>
+      <path d="M20 40a10 10 0 0 0 14 10A10 10 0 0 0 20 40z" fill="#FDBA74"/>
+    </svg>
+
+    <h1>Thank You!</h1>
+    <p>Your email has been received. You’ll be the first to know when Excellyte launches 🚀</p>
+    <a href="index.html" class="btn">← Back to Home</a>
+
+    <div class="social">
+      <a href="https://tiktok.com/@excellyte_hydration" target="_blank">TikTok</a>
+      <a href="https://instagram.com/excellyte_hydration" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@excellyte_hydration" target="_blank">YouTube</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div>© <span id="y"></span> Excellyte. All rights reserved.</div>
+  <div class="social">
+    <a href="https://tiktok.com/@excellyte_hydration" target="_blank">TikTok</a>
+    <a href="https://instagram.com/excellyte_hydration" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@excellyte_hydration" target="_blank">YouTube</a>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
