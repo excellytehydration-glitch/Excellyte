@@ -19,7 +19,7 @@
   <!-- Global stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Page-local typography rhythm (optional: move into styles.css later) -->
+  <!-- Page-local typography rhythm -->
   <style>
     .content p{margin:0 0 14px; line-height:1.65}
     .content h1{margin:0 0 14px; line-height:1.2}
@@ -30,7 +30,7 @@
 </head>
 <body>
 
-  <!-- Header (rounded floating card) -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
       <a class="brand" href="/">
@@ -100,6 +100,10 @@
               Small daily wins compound into big change. Join the Gratitude Challenge to build momentum with us.
             </p>
           </div>
+          <!-- New Button -->
+          <div class="mt-16">
+            <a class="btn btn-blue" href="ingredients.html">See Nutrition & Ingredients</a>
+          </div>
         </div>
       </div>
     </section>
@@ -146,7 +150,7 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // AJAX submit: silently POST to Zapier, then redirect to thanks.html
+    // AJAX submit
     document.getElementById('xl-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
