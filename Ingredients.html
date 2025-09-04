@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutrition & Ingredients | Excellyte</title>
+  <meta name="description" content="Excellyte nutrition facts and clean ingredient list. Double electrolytes, zero added sugar, and a gratitude-powered mission.">
+
+  <!-- Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-local rhythm (optional; move into styles.css later) -->
+  <style>
+    .content p{margin:0 0 14px; line-height:1.65}
+    .content h1{margin:0 0 14px; line-height:1.2}
+    .content h2{margin:0 10px 12px 0; line-height:1.25}
+    .grid-2{display:grid; gap:20px}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,39,.6), rgba(17,24,39,.88));
+      font-weight:800; letter-spacing:.2px;
+    }
+    .facts{
+      display:grid; gap:10px;
+      border:1px solid var(--line); border-radius:16px; padding:18px;
+      background:linear-gradient(180deg, rgba(17,24,39,.70), rgba(17,24,39,.88));
+      box-shadow:var(--shadow)
+    }
+    .facts h3{margin:0 0 6px}
+    .facts small{color:var(--muted)}
+    .table{width:100%; border-collapse:collapse; margin-top:6px}
+    .table th,.table td{padding:10px 12px; border-top:1px solid var(--line); text-align:left}
+    .table th{color:#cbd5e1; font-weight:800}
+    .icon{width:24px;height:24px;flex:0 0 auto}
+    .ing-item{display:flex; gap:10px; align-items:flex-start; padding:12px; border:1px solid var(--line); border-radius:12px;
+      background:linear-gradient(180deg, rgba(17,24,39,.60), rgba(17,24,39,.85))}
+    .ing-item strong{display:block}
+    .compare{border:1px solid var(--line); border-radius:16px; padding:18px; background:linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.90))}
+    .compare .table td,.compare .table th{text-align:center}
+    .note{font-size:12px;color:var(--muted)}
+    .hero-min{padding:40px 0}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Excellyte logo" class="logo">
+        <div>
+          <div class="brand-title">Excellyte</div>
+          <div class="brand-tag">Hydration with Gratitude</div>
+        </div>
+      </a>
+      <div class="cta-row">
+        <a class="btn" href="index.html#signup">Early Access</a>
+        <a class="btn orange" href="gratitude.html">Gratitude Challenge</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- Hero -->
+    <section class="hero hero-min">
+      <div class="wrap">
+        <p class="eyebrow">Transparency First</p>
+        <h1 class="title">Nutrition & Ingredients</h1>
+        <p class="subtitle max-820">
+          Twice the electrolytes. Zero added sugar. Clean, natural ingredients designed for resilience.
+        </p>
+
+        <div class="badges">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="#22d3ee" stroke-width="2"/><path d="M7 8l5-5 5 5" stroke="#34d399" stroke-width="2"/></svg> 2× Electrolytes</span>
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#22d3ee" stroke-width="2"/><path d="M8 12h8" stroke="#34d399" stroke-width="2"/></svg> 0 Added Sugar</span>
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 7-7 11-7-11 7-7z" stroke="#22d3ee" stroke-width="2"/></svg> Clean Ingredients</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutrition Facts + Callouts -->
+    <section>
+      <div class="wrap grid-2">
+        <!-- Left: Nutrition Facts -->
+        <div class="facts">
+          <h3>Nutrition Facts</h3>
+          <small>Per 1 tsp serving (mixed in 24 oz water) • ~30 servings per pouch</small>
+
+          <table class="table" aria-label="Nutrition facts">
+            <thead>
+              <tr><th>Nutrient</th><th>Amount</th><th>% DV*</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sodium</td><td>1,000 mg</td><td>4%</td></tr>
+              <tr><td>Potassium</td><td>500 mg</td><td>10%</td></tr>
+              <tr><td>Magnesium</td><td>40 mg</td><td>10%</td></tr>
+              <tr><td>Vitamin C</td><td>90 mg</td><td>100%</td></tr>
+              <tr><td>Calories</td><td>0</td><td>—</td></tr>
+              <tr><td>Added Sugars</td><td>0 g</td><td>0%</td></tr>
+            </tbody>
+          </table>
+          <span class="note">*% Daily Values are based on a 2,000 calorie diet. Values will be finalized after third-party testing.</span>
+        </div>
+
+        <!-- Right: Key callouts / mockup -->
+        <div class="card">
+          <h3 class="h3-tight">What You’ll Feel</h3>
+          <ul class="list">
+            <li><span class="dot"></span><span>Fast hydration with **balanced sodium + potassium**</span></li>
+            <li><span class="dot"></span><span>Clean taste with **no added sugar** or artificial junk</span></li>
+            <li><span class="dot"></span><span>Light citrus from **real lemon & orange** powders</span></li>
+          </ul>
+          <img src="mockup.png" alt="Excellyte product mockup" class="mock" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Ingredients list with icons -->
+    <section>
+      <div class="wrap">
+        <h2>What’s Inside</h2>
+        <div class="steps mt-14">
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 18l8-12 8 12H4z" stroke="#22d3ee" stroke-width="2"/></svg>
+            <div>
+              <strong>Redmond Real Salt</strong>
+              <span class="muted">Natural sodium + trace minerals to replace what you sweat out.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#34d399" stroke-width="2"/><path d="M12 7v10M7 12h10" stroke="#22d3ee" stroke-width="2"/></svg>
+            <div>
+              <strong>NoSalt (Potassium Chloride)</strong>
+              <span class="muted">Balances sodium for muscle/nerve function and steady hydration.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 4h10l-1 7a6 6 0 11-8 0L7 4z" stroke="#22d3ee" stroke-width="2"/></svg>
+            <div>
+              <strong>Coconut Water Powder</strong>
+              <span class="muted">Natural electrolytes (including magnesium) and a smoother taste.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" stroke="#f97316" stroke-width="2"/></svg>
+            <div>
+              <strong>Lemon &amp; Orange Juice Powders</strong>
+              <span class="muted">Real citrus flavor + Vitamin C. Bright, clean, and refreshing.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6 18c3-6 9-6 12 0" stroke="#34d399" stroke-width="2"/></svg>
+            <div>
+              <strong>Stevia &amp; Monkfruit Extracts</strong>
+              <span class="muted">Natural sweetness without sugar spikes or calories.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="3" stroke="#22d3ee" stroke-width="2"/></svg>
+            <div>
+              <strong>Organic Rice Hulls (trace)</strong>
+              <span class="muted">Natural anti-caking to keep the powder free-flowing.</span>
+            </div>
+          </div>
+          <div class="ing-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="#34d399" stroke-width="2"/></svg>
+            <div>
+              <strong>Sunflower Lecithin (trace)</strong>
+              <span class="muted">Helps the mix wet-out and dissolve quickly in cold water.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="note mt-16">Allergens: free from gluten, dairy, soy. Vegan-friendly. No artificial colors, flavors, or preservatives.</p>
+      </div>
+    </section>
+
+    <!-- Comparison section -->
+    <section>
+      <div class="wrap compare">
+        <h2>Excellyte vs. Leading Brands</h2>
+        <table class="table" aria-label="Comparison table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Excellyte</th>
+              <th>Leading Brand A</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Electrolytes per Serving</td>
+              <td><strong>2×</strong></td>
+              <td>Standard</td>
+            </tr>
+            <tr>
+              <td>Added Sugar</td>
+              <td><strong>0 g</strong></td>
+              <td>7–11 g</td>
+            </tr>
+            <tr>
+              <td>Sweetener</td>
+              <td>Stevia + Monkfruit</td>
+              <td>Sugar / Dextrose</td>
+            </tr>
+            <tr>
+              <td>Anti-Caking / Wet-Out</td>
+              <td>Rice Hulls + Sunflower Lecithin</td>
+              <td>Silicates / Synthetics</td>
+            </tr>
+            <tr>
+              <td>Philosophy</td>
+              <td>Hydration with Gratitude</td>
+              <td>Performance Only</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">Values are representative; nutrition will be finalized after third-party verification.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="wrap card" style="text-align:center">
+        <h2 class="h3-tight">Ready to Hydrate with Purpose?</h2>
+        <p class="subtitle" style="margin:0 auto 12px; max-width:760px">
+          Join early adopters and get 10% off when we launch. You’ll also get the inside track on flavors and the Gratitude Challenge.
+        </p>
+        <div class="row" style="justify-content:center">
+          <a class="btn btn-blue body-cta" href="index.html#signup">Get Early Access</a>
+          <a class="btn orange body-cta" href="gratitude.html">See the Gratitude Challenge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap" style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>© <span id="y"></span> Excellyte. All rights reserved.</div>
+      <div class="social" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="https://tiktok.com/@excellyte_hydration" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://instagram.com/excellyte_hydration" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@excellyte_hydration" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
