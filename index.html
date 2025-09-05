@@ -26,6 +26,26 @@
     .content h2{margin:0 10px 12px 0; line-height:1.25}
     .content ul{margin:0 0 14px 20px}
     .content li{margin:6px 0}
+
+    /* Lightweight badges for hero */
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 6px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,39,.55), rgba(17,24,39,.85));
+      font-weight:800;letter-spacing:.2px;font-size:13px
+    }
+    .icon{width:18px;height:18px;flex:0 0 auto}
+
+    /* Small callout under mockup */
+    .callout{
+      margin-top:12px;padding:12px;border-radius:12px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(17,24,39,.55), rgba(17,24,39,.88));
+      font-weight:700
+    }
+    .callout .muted{display:block;font-weight:600}
   </style>
 </head>
 <body>
@@ -55,6 +75,23 @@
       <div class="wrap">
         <p class="eyebrow">Born from adversity. Built on gratitude.</p>
         <h1 class="title">Hydration that keeps you moving.</h1>
+
+        <!-- NEW: quick badges including Land + Sea minerals -->
+        <div class="badges">
+          <span class="badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 12h16" stroke="#22d3ee" stroke-width="2"/><path d="M7 8l5-5 5 5" stroke="#34d399" stroke-width="2"/></svg>
+            2× Electrolytes
+          </span>
+          <span class="badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#22d3ee" stroke-width="2"/><path d="M8 12h8" stroke="#34d399" stroke-width="2"/></svg>
+            0 Added Sugar
+          </span>
+          <span class="badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 15l6-6 3 3 6-6" stroke="#34d399" stroke-width="2"/></svg>
+            Land + Sea Minerals
+          </span>
+        </div>
+
         <p class="subtitle max-820">
           Clean ingredients. Zero gimmicks. Real performance. Join early adopters and unlock
           <strong>10% off</strong>—delivered to your inbox.
@@ -63,7 +100,8 @@
         <ul class="list">
           <li><span class="dot"></span><span>Founder’s journey → resilience in every sip.</span></li>
           <li><span class="dot"></span><span>Balanced electrolytes, clean taste, no added sugar.</span></li>
-          <li><span class="dot"></span><span>Gratitude Challenge community for daily momentum.</span></li>
+          <!-- NEW bullet: Shilajit + ConcenTrace -->
+          <li><span class="dot"></span><span><strong>Dual-source trace minerals — Land (Shilajit) + Sea (ConcenTrace®)</strong> for steady, clean hydration.</span></li>
         </ul>
 
         <!-- Signup Form -->
@@ -100,7 +138,14 @@
               Small daily wins compound into big change. Join the Gratitude Challenge to build momentum with us.
             </p>
           </div>
-          <!-- New Button -->
+
+          <!-- NEW: Land + Sea minerals callout -->
+          <div class="callout">
+            Dual-source trace minerals — <strong>Land (Shilajit)</strong> + <strong>Sea (ConcenTrace®)</strong>.
+            <span class="muted">Natural ionic minerals and fulvic compounds to complement our high-electrolyte base.</span>
+          </div>
+
+          <!-- Button to ingredients page -->
           <div class="mt-16">
             <a class="btn btn-blue" href="ingredients.html">See Nutrition & Ingredients</a>
           </div>
@@ -125,7 +170,7 @@
               <li><span class="dot"></span><span><strong>Authenticity:</strong> Real story, real science, no fluff.</span></li>
               <li><span class="dot"></span><span><strong>Resilience:</strong> Keep going—small wins add up.</span></li>
               <li><span class="dot"></span><span><strong>Gratitude:</strong> Our daily edge. It changes how we show up.</span></li>
-              <li><span class="dot"></span><span><strong>Clean Fuel:</strong> Balanced electrolytes. No added sugar. Great taste.</span></li>
+              <li><span class="dot"></span><span><strong>Clean Fuel:</strong> Balanced electrolytes with natural citrus, <em>plus</em> Land + Sea trace minerals (Shilajit + ConcenTrace®).</span></li>
             </ul>
             <a class="btn orange" href="gratitude.html">Join the Gratitude Challenge</a>
           </div>
@@ -170,4 +215,3 @@
   </script>
 </body>
 </html>
-```0
