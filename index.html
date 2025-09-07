@@ -41,10 +41,11 @@
         </span>
       </a>
 
+      <!-- Restored original header button order -->
       <nav class="cta-row" aria-label="Primary">
         <a class="btn" href="#signup">Early Access</a>
         <a class="btn orange" href="gratitude.html">Gratitude Challenge</a>
-        <a class="btn secondary" href="ingredients.html">Nutrition & Ingredients</a>
+        <a class="btn secondary" href="#story">Founder’s Story</a>
       </nav>
     </div>
   </header>
@@ -69,11 +70,15 @@
         <!-- Signup Form -->
         <section id="signup" class="card" aria-label="Early access signup">
           <form id="xl-form" action="https://formspree.io/f/xeolkblb" method="POST">
-            <label for="email">Email *</label>
-            <input id="email" class="input" type="email" name="email" placeholder="you@example.com" required>
+            <!-- Restored tag so Formspree shows Early Access -->
+            <input type="hidden" name="source" value="index_hero_signup">
 
+            <!-- Name first, then Email -->
             <label for="name">Name (optional)</label>
             <input id="name" class="input" type="text" name="name" placeholder="Your name">
+
+            <label for="email">Email *</label>
+            <input id="email" class="input" type="email" name="email" placeholder="you@example.com" required>
 
             <!-- Honeypot -->
             <input type="text" name="_gotcha" style="display:none">
@@ -97,6 +102,7 @@
             </p>
           </div>
           <div class="mt-16">
+            <!-- Keeping this button you asked for previously -->
             <a class="btn btn-blue" href="ingredients.html">See Nutrition & Ingredients</a>
           </div>
         </div>
@@ -145,7 +151,7 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // AJAX Formspree submit
+    // AJAX Formspree submit (unchanged, just respects your field order + source tag)
     document.getElementById('xl-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
